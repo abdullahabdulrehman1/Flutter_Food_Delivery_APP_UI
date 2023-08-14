@@ -42,15 +42,27 @@ class Popularfooddetail extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Appicon(
-                      icon: Icons.arrow_back_ios,
-                      // iconColor: Popularfooddetail.back,
-                      backgroundcolor: Popularfooddetail.back,
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      iconSize: Dimension.iconsize24,
+                      icon: Appicon(
+                        icon: Icons.arrow_back_ios,
+                        // iconColor: Popularfooddetail.back,
+                        backgroundcolor: Popularfooddetail.back,
+                        // size: 20,
+                      ),
                     ),
-                    Appicon(
-                      icon: Icons.shopping_cart_outlined,
-                      // iconColor: Popularfooddetail.back,
-                      backgroundcolor: Popularfooddetail.back,
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Appicon(
+                        icon: Icons.shopping_cart_outlined,
+                        // iconColor: Popularfooddetail.back,
+                        backgroundcolor: Popularfooddetail.back,
+                      ),
                     ),
                   ],
                 )),

@@ -1,12 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-
 import 'Homepage.dart';
 import '../../../util/dimensions.dart';
 import '../widgets/iconsandtest.dart';
 import '../widgets/smalltext.dart';
 import '../widgets/texts.dart';
-// import 'widgets/texts.dart';
 
 class Foodpagebody extends StatefulWidget {
   const Foodpagebody({super.key});
@@ -95,103 +93,110 @@ class _FoodpagebodyState extends State<Foodpagebody> {
         //listview
 
         // height: 900,
-        ListView.builder(
-            physics: NeverScrollableScrollPhysics(),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, "/second");
+          },
+          child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
 
-            // BouncingScrollPhysics(),),
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: ((context, index) {
-              return Container(
-                  margin: EdgeInsets.only(
-                      left: Dimension.width20,
-                      right: Dimension.width20,
-                      bottom: Dimension.height10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      //IMAGE SECTION_________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-                      Container(
-                        width: Dimension.listViewImagesize,
-                        height: 120,
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(Dimension.radius20),
-                            color: index.isEven
-                                ? const Color(0xff599c5d)
-                                : const Color(0xff9294cc),
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                    "assets/Images/Frame 2 (2).png"))),
-                      ),
-                      //TExt CONTAINER****************************************
-                      Expanded(
-                        child: Container(
-                          // margin: EdgeInsets.only(right: Dimension.width10),
-                          height: Dimension.listViewTextContsize,
-                          // width: 200,
+              // BouncingScrollPhysics(),),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: ((context, index) {
+                return Container(
+                    margin: EdgeInsets.only(
+                        left: Dimension.width20,
+                        right: Dimension.width20,
+                        bottom: Dimension.height10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        //IMAGE SECTION_________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                        Container(
+                          width: Dimension.listViewImagesize,
+                          height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(Dimension.radius20),
-                                  bottomLeft:
-                                      Radius.circular(Dimension.radius20))),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                left: Dimension.width10,
-                                // right: Dimension.width10,
-                                top: Dimension.height10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Bigtext(
-                                  text: "Nutritious fruit meal in China",
-                                  overFlow: TextOverflow.ellipsis,
-                                  color: index.isEven
-                                      ? Colors.black
-                                      : Colors.green,
-                                ),
-                                SizedBox(
-                                  height: Dimension.height10,
-                                ),
-                                Smalltext(
-                                  text: "With Chinese Charactistics and Taste",
-                                  color: Colors.black45,
-                                ),
-                                SizedBox(
-                                  height: Dimension.height10,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Iconandtext(
-                                        icon: Icons.circle_sharp,
-                                        colour: Colors.black38,
-                                        iconColor: Homepage.starcolor,
-                                        text: "Normal"),
-                                    Iconandtext(
-                                        colour: Colors.black38,
-                                        icon: Icons.location_on,
-                                        iconColor: Homepage.back,
-                                        text: "32 km"),
-                                    const Iconandtext(
-                                        colour: Colors.black38,
-                                        icon: Icons.access_time_filled_sharp,
-                                        iconColor: Colors.red,
-                                        text: "32 min")
-                                  ],
-                                )
-                              ],
+                              borderRadius:
+                                  BorderRadius.circular(Dimension.radius20),
+                              color: index.isEven
+                                  ? const Color(0xff599c5d)
+                                  : const Color(0xff9294cc),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      "assets/Images/Frame 2 (2).png"))),
+                        ),
+                        //TExt CONTAINER****************************************
+                        Expanded(
+                          child: Container(
+                            // margin: EdgeInsets.only(right: Dimension.width10),
+                            height: Dimension.listViewTextContsize,
+                            // width: 200,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                    topRight:
+                                        Radius.circular(Dimension.radius20),
+                                    bottomLeft:
+                                        Radius.circular(Dimension.radius20))),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  left: Dimension.width10,
+                                  // right: Dimension.width10,
+                                  top: Dimension.height10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Bigtext(
+                                    text: "Nutritious fruit meal in China",
+                                    overFlow: TextOverflow.ellipsis,
+                                    color: index.isEven
+                                        ? Colors.black
+                                        : Colors.green,
+                                  ),
+                                  SizedBox(
+                                    height: Dimension.height10,
+                                  ),
+                                  Smalltext(
+                                    text:
+                                        "With Chinese Charactistics and Taste",
+                                    color: Colors.black45,
+                                  ),
+                                  SizedBox(
+                                    height: Dimension.height10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Iconandtext(
+                                          icon: Icons.circle_sharp,
+                                          colour: Colors.black38,
+                                          iconColor: Homepage.starcolor,
+                                          text: "Normal"),
+                                      Iconandtext(
+                                          colour: Colors.black38,
+                                          icon: Icons.location_on,
+                                          iconColor: Homepage.back,
+                                          text: "32 km"),
+                                      const Iconandtext(
+                                          colour: Colors.black38,
+                                          icon: Icons.access_time_filled_sharp,
+                                          iconColor: Colors.red,
+                                          text: "32 min")
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ));
-            })),
+                      ],
+                    ));
+              })),
+        ),
       ],
     );
   }
@@ -329,7 +334,7 @@ class _FoodpagebodyState extends State<Foodpagebody> {
                                 width: Dimension.width10 / 4,
                               ),
                               Smalltext(
-                                text: "Comments",
+                                text: "Reviews",
                                 overFlow: TextOverflow.ellipsis,
                               )
                             ],

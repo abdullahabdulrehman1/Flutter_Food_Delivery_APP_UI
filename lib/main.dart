@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:helloworld/pages/food/Refooddetail.dart';
 import 'package:helloworld/pages/food/popularfooddetail.dart';
-import 'package:helloworld/pages/food/recommendedfooddetail.dart';
+// import 'package:helloworld/pages/food/Refooddetail.dart';
+// import 'package:helloworld/pages/food/popularfooddetail.dart';
+// import 'package:helloworld/pages/food/recommendedfooddetail.dart';
 import 'package:helloworld/pages/homepage/foodpagebody/Homepage.dart';
+import 'package:helloworld/pages/homepage/foodpagebody/foodpagebody.dart';
 
 import 'Helper/dependancies.dart' as dep;
 
@@ -24,7 +26,12 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      // home: Homepage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Homepage(),
+        '/second': (context) => Popularfooddetail(),
+      },
     );
   }
 }
